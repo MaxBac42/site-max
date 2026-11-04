@@ -256,7 +256,9 @@ body{position:relative;isolation:isolate}
 .acc-list{margin:0;padding-left:1.1em;display:grid;gap:6px;max-width:70ch}
 .acc-lead{margin:0 0 12px;max-width:70ch;font-weight:600}
 .acc-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.grp{border:1px solid var(--line);border-radius:14px;padding:16px 18px;background:rgba(255,255,255,.025)}
+.grp{border:1px solid var(--line);border-radius:14px;padding:16px 18px;background:rgba(255,255,255,.025);transition:transform .25s ease,border-color .25s,box-shadow .25s,background .25s}
+.grp:hover{transform:translateY(-3px);border-color:var(--accent-text);background:rgba(247,255,0,.035);box-shadow:0 10px 24px rgba(0,0,0,.35)}
+@media (prefers-reduced-motion:reduce){.grp,.grp:hover{transition:none;transform:none}}
 .grp h4{display:flex;align-items:baseline;gap:10px;margin:0 0 12px;font-family:var(--display);font-weight:700;font-size:1.02rem;letter-spacing:-.01em}
 .grp h4 span{font-family:var(--mono);font-weight:500;font-size:.74rem;color:var(--accent-text)}
 .grp ul{list-style:none;margin:0;padding:0;display:grid;gap:9px;font-size:.94rem;line-height:1.45}
@@ -530,7 +532,6 @@ footer .wrap{padding-block:28px;font-family:var(--mono);font-size:.78rem;color:v
                 <li>Participer à la démarche qualité : Qualiopi, audits</li>
               </ul></section>
             </div>
-            <ul class="chips" aria-label="Domaines"><li>Management</li><li>Marketing opérationnel</li><li>SEO / SEA</li><li>Social ads</li><li>Contenus</li><li>IA</li></ul>
           </div>
         </div>
       </div>
@@ -569,7 +570,6 @@ footer .wrap{padding-block:28px;font-family:var(--mono);font-size:.78rem;color:v
                 <li>Participer à l'amélioration continue et à la qualité du Groupe : Qualiopi, audits, etc.</li>
               </ul></section>
             </div>
-            <ul class="chips" aria-label="Domaines"><li>Stratégie</li><li>Management</li><li>Budget</li><li>SEO</li><li>Événementiel</li></ul>
           </div>
         </div>
       </div>
@@ -596,7 +596,6 @@ footer .wrap{padding-block:28px;font-family:var(--mono);font-size:.78rem;color:v
               <li>Veille internet sur la marque (e-réputation)</li>
               <li>Conception et organisation des événements internes et externes</li>
             </ul>
-            <ul class="chips" aria-label="Domaines"><li>Print &amp; web</li><li>Relations presse</li><li>E-réputation</li><li>Événementiel</li></ul>
           </div>
         </div>
       </div>
@@ -624,7 +623,6 @@ footer .wrap{padding-block:28px;font-family:var(--mono);font-size:.78rem;color:v
               <li>Production de vidéos</li>
               <li>Rédaction des articles pour les supports internes</li>
             </ul>
-            <ul class="chips" aria-label="Domaines"><li>SEO</li><li>Refonte web</li><li>Contenus</li><li>Vidéo</li></ul>
           </div>
         </div>
       </div>
@@ -650,7 +648,6 @@ footer .wrap{padding-block:28px;font-family:var(--mono);font-size:.78rem;color:v
               <li>Rédaction d'articles à diffuser en interne</li>
               <li>Communication et animation du « Plateau », espace de coworking qui héberge et accompagne des startups externes et internes</li>
             </ul>
-            <ul class="chips" aria-label="Domaines"><li>Innovation</li><li>Communication interne</li><li>Événementiel</li></ul>
           </div>
         </div>
       </div>
@@ -674,7 +671,6 @@ footer .wrap{padding-block:28px;font-family:var(--mono);font-size:.78rem;color:v
               <li>Conception et mise en œuvre d'outils destinés à promouvoir l'événement (dossier de presse, flyers, affiches)</li>
               <li>Organisation de l'événement (mailing, hébergement, réception)</li>
             </ul>
-            <ul class="chips" aria-label="Domaines"><li>Événementiel</li><li>Relations presse</li><li>Print</li><li>Culture</li></ul>
           </div>
         </div>
       </div>
@@ -715,7 +711,6 @@ footer .wrap{padding-block:28px;font-family:var(--mono);font-size:.78rem;color:v
             <h3>Formation Chef de projet digital</h3>
             <p class="org">Institut F2I</p>
             <p class="where">Vincennes · En alternance</p>
-            <ul class="chips" aria-label="Domaines"><li>Gestion de projet</li><li>Digital</li><li>Marketing en ligne</li></ul>
             <span class="hint" aria-hidden="true">Voir le détail <b>↻</b></span>
           </div>
           <div class="face back">
@@ -732,7 +727,6 @@ footer .wrap{padding-block:28px;font-family:var(--mono);font-size:.78rem;color:v
             <h3>Master Information, Communication &amp; Numérique</h3>
             <p class="org">Université Jean-Monnet</p>
             <p class="where">Saint-Étienne · IRAM, en partenariat avec Télécom Saint-Étienne</p>
-            <ul class="chips" aria-label="Domaines"><li>Communication</li><li>Numérique</li><li>Stratégie</li></ul>
             <span class="hint" aria-hidden="true">Voir le détail <b>↻</b></span>
           </div>
           <div class="face back">
@@ -749,7 +743,6 @@ footer .wrap{padding-block:28px;font-family:var(--mono);font-size:.78rem;color:v
             <h3>Licence d'Histoire</h3>
             <p class="org">Université Jean-Monnet</p>
             <p class="where">Saint-Étienne</p>
-            <ul class="chips" aria-label="Domaines"><li>Histoire</li><li>Analyse</li><li>Synthèse</li></ul>
             <span class="hint" aria-hidden="true">Voir le détail <b>↻</b></span>
           </div>
           <div class="face back">
