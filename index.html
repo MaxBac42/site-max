@@ -360,6 +360,9 @@ footer .wrap{padding-block:28px;font-family:var(--mono);font-size:.78rem;color:v
 /* reveal: elements stay readable; JS adds the offset only to things below the fold */
 .js .reveal.pending{transform:translateY(40px)}
 .js .reveal{transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.acc.reveal,.flip.reveal{transition:transform .9s cubic-bezier(.2,.7,.2,1) var(--d,0s),opacity .7s ease var(--d,0s),border-color .3s}
+.acc.reveal.pending{opacity:0;transform:translateY(56px) scale(.96)}
+.flip.reveal.pending{opacity:0;transform:perspective(900px) translateY(60px) rotateX(18deg) rotateZ(-2deg)}
 
 @media (max-width:820px){
   .kpis .wrap{grid-template-columns:repeat(2,1fr)}
@@ -908,7 +911,7 @@ footer .wrap{padding-block:28px;font-family:var(--mono);font-size:.78rem;color:v
     // reveals: only offset what is below the fold, so the first frame is complete
     document.documentElement.classList.add('js');
     var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){ if (en.isIntersecting) { en.target.classList.remove('pending'); io.unobserve(en.target); } });
+      var k = 0; entries.forEach(function(en){ if (en.isIntersecting) { en.target.style.setProperty('--d', (k++ * 0.12) + 's'); en.target.classList.remove('pending'); io.unobserve(en.target); } });
     }, { rootMargin: '0px 0px -8% 0px' });
     $('.reveal').forEach(function(el){
       if (el.getBoundingClientRect().top > innerHeight) { el.classList.add('pending'); io.observe(el); }
