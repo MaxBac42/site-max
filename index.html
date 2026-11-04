@@ -255,6 +255,14 @@ body{position:relative;isolation:isolate}
 .acc-pad .where{margin:0 0 12px;color:var(--muted);font-size:.95rem}
 .acc-list{margin:0;padding-left:1.1em;display:grid;gap:6px;max-width:70ch}
 .acc-lead{margin:0 0 12px;max-width:70ch;font-weight:600}
+.acc-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.grp{border:1px solid var(--line);border-radius:14px;padding:16px 18px;background:rgba(255,255,255,.025)}
+.grp h4{display:flex;align-items:baseline;gap:10px;margin:0 0 12px;font-family:var(--display);font-weight:700;font-size:1.02rem;letter-spacing:-.01em}
+.grp h4 span{font-family:var(--mono);font-weight:500;font-size:.74rem;color:var(--accent-text)}
+.grp ul{list-style:none;margin:0;padding:0;display:grid;gap:9px;font-size:.94rem;line-height:1.45}
+.grp li{position:relative;padding-left:15px}
+.grp li::before{content:"";position:absolute;left:0;top:.6em;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+@media (max-width:760px){.acc-groups{grid-template-columns:1fr}}
 .acc-note{display:inline-block;margin:12px 0 0;font-size:.85rem}
 @media (max-width:640px){
   .acc-head{grid-template-columns:minmax(0,1fr) auto;padding:18px}
@@ -498,22 +506,30 @@ footer .wrap{padding-block:28px;font-family:var(--mono);font-size:.78rem;color:v
           <div class="acc-pad">
             <p class="where">Lyon · Réseau d'écoles et de centres de formation</p>
             <p class="acc-lead">Décliner et déployer la stratégie marketing et multicanal de deux marques du réseau : l'École 3A et Viva Mundi.</p>
-            <ul class="acc-list">
-              <li>Manager une équipe en direct et coordonner les experts internes sollicités selon les projets</li>
-              <li>Piloter le plan de communication et les campagnes multicanales, online et offline</li>
-              <li>Garantir la cohérence et le positionnement des deux marques, et suivre leur e-réputation (avis, classements)</li>
-              <li>Optimiser le parcours candidat, de la génération de leads à l'inscription, et faire évoluer les outils du marketing opérationnel : CRM, nurturing, e-mailing, automatisation, intégration de l'IA</li>
-              <li>Mesurer l'impact des actions, suivre les indicateurs de performance et de rentabilité, et en rendre compte à la direction pour ajuster la stratégie</li>
-              <li>Piloter l'acquisition digitale : référencement naturel et payant (SEO, SEA), campagnes social ads (SMA) et optimisation de la présence sur les réseaux sociaux (SMO)</li>
-              <li>Accompagner les équipes commerciales : conseil, argumentaires et supports d'aide à la vente</li>
-              <li>Piloter la création de contenus et la ligne éditoriale : vidéos, podcasts, contenus pour les réseaux sociaux et animation des communautés</li>
-              <li>Développer la visibilité des écoles : relations presse, partenariats, ambassadeurs étudiants et alumni</li>
-              <li>Piloter les contenus et la rédaction des sites web des écoles, en lien avec les objectifs de recrutement</li>
-              <li>Concevoir et gérer les supports de communication print et digitaux : brochures, présentations, newsletters, e-mailings</li>
-              <li>Gérer le budget, les partenariats externes et la négociation des contrats</li>
-              <li>Assurer la veille, les études de marché et le benchmark</li>
-              <li>Participer à la démarche qualité : Qualiopi, audits</li>
-            </ul>
+            <div class="acc-groups">
+              <section class="grp"><h4><span>01</span>Pilotage &amp; management</h4><ul>
+                <li>Manager une équipe en direct et coordonner les experts internes sollicités selon les projets</li>
+                <li>Piloter le plan de communication et les campagnes multicanales, online et offline</li>
+                <li>Gérer le budget, les partenariats externes et la négociation des contrats</li>
+                <li>Mesurer l'impact des actions, suivre les indicateurs de performance et de rentabilité, et en rendre compte à la direction pour ajuster la stratégie</li>
+              </ul></section>
+              <section class="grp"><h4><span>02</span>Acquisition &amp; conversion</h4><ul>
+                <li>Piloter l'acquisition digitale : référencement naturel et payant (SEO, SEA), campagnes social ads (SMA) et optimisation de la présence sur les réseaux sociaux (SMO)</li>
+                <li>Optimiser le parcours candidat, de la génération de leads à l'inscription, et faire évoluer les outils du marketing opérationnel : CRM, nurturing, e-mailing, automatisation, intégration de l'IA</li>
+                <li>Accompagner les équipes commerciales : conseil, argumentaires et supports d'aide à la vente</li>
+              </ul></section>
+              <section class="grp"><h4><span>03</span>Marque &amp; contenus</h4><ul>
+                <li>Garantir la cohérence et le positionnement des deux marques, et suivre leur e-réputation (avis, classements)</li>
+                <li>Piloter la création de contenus et la ligne éditoriale : vidéos, podcasts, contenus pour les réseaux sociaux et animation des communautés</li>
+                <li>Piloter les contenus et la rédaction des sites web des écoles, en lien avec les objectifs de recrutement</li>
+                <li>Concevoir et gérer les supports de communication print et digitaux : brochures, présentations, newsletters, e-mailings</li>
+              </ul></section>
+              <section class="grp"><h4><span>04</span>Visibilité &amp; veille</h4><ul>
+                <li>Développer la visibilité des écoles : relations presse, partenariats, ambassadeurs étudiants et alumni</li>
+                <li>Assurer la veille, les études de marché et le benchmark</li>
+                <li>Participer à la démarche qualité : Qualiopi, audits</li>
+              </ul></section>
+            </div>
             <ul class="chips" aria-label="Domaines"><li>Management</li><li>Marketing opérationnel</li><li>SEO / SEA</li><li>Social ads</li><li>Contenus</li><li>IA</li></ul>
           </div>
         </div>
@@ -534,19 +550,25 @@ footer .wrap{padding-block:28px;font-family:var(--mono);font-size:.78rem;color:v
           <div class="acc-pad">
             <p class="where">Paris · CFQ</p>
             <p class="acc-lead">Définir et mettre en œuvre la stratégie de communication, en collaboration avec la direction, pour les 4 marques : Isifa Plus Values, Ipac Bachelor Factory, IHECF et MBway.</p>
-            <ul class="acc-list">
-              <li>Manager l'équipe communication (3 personnes)</li>
-              <li>Prévoir et gérer le budget de communication</li>
-              <li>Planifier et mettre en œuvre les campagnes marketing pour promouvoir les services de l'entreprise</li>
-              <li>Analyser les performances puis réaliser le reporting à la direction lors des réunions de pilotage</li>
-              <li>Suivre et évaluer les résultats des campagnes et des initiatives, afin d'ajuster la stratégie de communication si nécessaire</li>
-              <li>Gérer les supports de communication : brochures, présentations, vidéos, etc.</li>
-              <li>Assurer le développement et la maintenance du site web placé sous ma responsabilité</li>
-              <li>Réaliser le référencement Google et les optimisations SEO</li>
-              <li>Développer et gérer les outils de communication : réseaux sociaux, référencement web, newsletter, JobBoard, etc.</li>
-              <li>Concevoir, planifier et organiser des événements : JPO, salons, remises de diplômes, concours d'éloquence, etc.</li>
-              <li>Participer à l'amélioration continue et à la qualité du Groupe : Qualiopi, audits, etc.</li>
-            </ul>
+            <div class="acc-groups">
+              <section class="grp"><h4><span>01</span>Pilotage &amp; management</h4><ul>
+                <li>Manager l'équipe communication (3 personnes)</li>
+                <li>Prévoir et gérer le budget de communication</li>
+                <li>Analyser les performances puis réaliser le reporting à la direction lors des réunions de pilotage</li>
+                <li>Suivre et évaluer les résultats des campagnes et des initiatives, afin d'ajuster la stratégie de communication si nécessaire</li>
+              </ul></section>
+              <section class="grp"><h4><span>02</span>Campagnes &amp; digital</h4><ul>
+                <li>Planifier et mettre en œuvre les campagnes marketing pour promouvoir les services de l'entreprise</li>
+                <li>Assurer le développement et la maintenance du site web placé sous ma responsabilité</li>
+                <li>Réaliser le référencement Google et les optimisations SEO</li>
+                <li>Développer et gérer les outils de communication : réseaux sociaux, référencement web, newsletter, JobBoard, etc.</li>
+              </ul></section>
+              <section class="grp"><h4><span>03</span>Supports, événements &amp; qualité</h4><ul>
+                <li>Gérer les supports de communication : brochures, présentations, vidéos, etc.</li>
+                <li>Concevoir, planifier et organiser des événements : JPO, salons, remises de diplômes, concours d'éloquence, etc.</li>
+                <li>Participer à l'amélioration continue et à la qualité du Groupe : Qualiopi, audits, etc.</li>
+              </ul></section>
+            </div>
             <ul class="chips" aria-label="Domaines"><li>Stratégie</li><li>Management</li><li>Budget</li><li>SEO</li><li>Événementiel</li></ul>
           </div>
         </div>
