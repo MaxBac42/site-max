@@ -417,6 +417,31 @@ footer .wrap{padding-block:28px;font-family:var(--mono);font-size:.78rem;color:v
   .hscroll .pin{position:static;min-height:0}
   .htrack{flex-wrap:wrap}
 }
+
+/* motion polish (principes Emil Kowalski) */
+:root{--ease-out:cubic-bezier(.23,1,.32,1);--ease-in-out:cubic-bezier(.77,0,.175,1)}
+.skills li,.jump span,.more-ico,.pgrid svg,.logos li,.hint b,.ai > div,.grp,.front,.acc,.summer summary,.pill a,nav a.navcta{transition-duration:.25s;transition-timing-function:var(--ease-out)}
+.btn{transition:transform .2s var(--ease-out),background .2s ease,color .2s ease}
+.btn:active,.jump:active,.pill a:active,nav a.navcta:active,.summer summary:active,.more-btn:active{transform:scale(.97)}
+.skills li:hover{transform:translateY(-2px)}
+.ai > div:hover{transform:translateY(-4px)}
+.pgrid > div:hover svg{transform:rotate(-6deg) scale(1.06)}
+.acc-ico,.acc-ico::after{transition-duration:.35s;transition-timing-function:var(--ease-out)}
+.acc-body{transition:grid-template-rows .4s var(--ease-out)}
+.flip-in{transition:transform .6s var(--ease-in-out),height .45s var(--ease-out)}
+.more{transition:max-height .5s var(--ease-out)}
+.js .reveal{transition:transform .8s var(--ease-out)}
+.reveal.pending{transform:translateY(24px)}
+.acc.reveal,.flip.reveal{transition:transform .7s var(--ease-out) var(--d,0s),opacity .5s ease var(--d,0s),border-color .25s ease}
+.acc.reveal.pending{opacity:0;transform:translateY(28px) scale(.98)}
+.flip.reveal.pending{opacity:0;transform:perspective(900px) translateY(28px) rotateX(10deg)}
+@media (hover:none){
+.btn:hover,.skills li:hover,.pgrid > div:hover svg,.logos li:hover,.ai > div:hover,.grp:hover,.flip:hover .hint b,.jump:hover span,.jump.ghost:hover span,.more-btn:hover .more-ico{transform:none}
+.grp:hover{box-shadow:none;background:rgba(255,255,255,.025);border-color:var(--line)}
+}
+@media (prefers-reduced-motion:reduce){
+.btn:hover,.skills li:hover,.pgrid > div:hover svg,.logos li:hover,.ai > div:hover,.grp:hover,.btn:active,.jump:active,.pill a:active,nav a.navcta:active,.summer summary:active,.more-btn:active{transform:none}
+}
 </style>
 
 <div class="progress" id="progress"></div>
@@ -915,7 +940,7 @@ footer .wrap{padding-block:28px;font-family:var(--mono);font-size:.78rem;color:v
     // reveals: only offset what is below the fold, so the first frame is complete
     document.documentElement.classList.add('js');
     var io = new IntersectionObserver(function(entries){
-      var k = 0; entries.forEach(function(en){ if (en.isIntersecting) { en.target.style.setProperty('--d', (k++ * 0.12) + 's'); en.target.classList.remove('pending'); io.unobserve(en.target); } });
+      var k = 0; entries.forEach(function(en){ if (en.isIntersecting) { en.target.style.setProperty('--d', (k++ * 0.06) + 's'); en.target.classList.remove('pending'); io.unobserve(en.target); } });
     }, { rootMargin: '0px 0px -8% 0px' });
     $('.reveal').forEach(function(el){
       if (el.getBoundingClientRect().top > innerHeight) { el.classList.add('pending'); io.observe(el); }
